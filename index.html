@@ -1,24 +1,23 @@
+```html
 <!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>นายวีรพงศ์ วงศ์ชารี | Portfolio นักศึกษา</title>
-    
+    <title>นายวีรพงศ์ วงศ์ชารี | Frontend Developer Portfolio</title>
+
     <style>
-        /* ------------------ Base & Typography ------------------ */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            /* เปลี่ยนเป็น 'Prompt', sans-serif ถ้าเพิ่ม Google Font แล้ว */
-            font-family: Arial, sans-serif; 
+            font-family: Arial, sans-serif;
         }
 
         body {
             line-height: 1.6;
             color: #333;
-            background-color: #eef1f5; /* สีพื้นหลังอ่อนมาก */
+            background-color: #eef1f5;
             scroll-behavior: smooth;
         }
 
@@ -28,10 +27,10 @@
             padding: 20px;
         }
 
-        /* ------------------ Header (Navigation Bar) ------------------ */
+        /* Header */
         header {
-            background: #ffffff; /* เปลี่ยนเป็นสีขาว/สว่าง */
-            border-bottom: 3px solid #1a73e8; /* ใช้สีน้ำเงินเข้มเป็นเส้นแบ่ง */
+            background: #ffffff;
+            border-bottom: 3px solid #1a73e8;
             padding: 0.5rem 20px;
             position: sticky;
             top: 0;
@@ -42,10 +41,10 @@
             align-items: center;
         }
 
-        header .โลโก้ {
+        header .logo {
             font-size: 1.4rem;
             font-weight: 700;
-            color: #1a73e8; /* สีน้ำเงินหลัก */
+            color: #1a73e8;
         }
 
         nav ul {
@@ -57,24 +56,24 @@
             color: #333;
             text-decoration: none;
             padding: 0.5rem 1rem;
-            transition: color 0.3s, background-color 0.3s;
+            transition: 0.3s;
             border-radius: 4px;
         }
 
-        nav ul li a:hover, nav ul li a.active {
+        nav ul li a:hover,
+        nav ul li a.active {
             color: #1a73e8;
             background-color: #f0f4f8;
         }
 
-        /* ------------------ Main Layout (Resume Style) ------------------ */
+        /* Main Layout */
         main {
             display: grid;
-            grid-template-columns: 3fr 1fr; /* 3 ส่วนสำหรับเนื้อหา, 1 ส่วนสำหรับ sidebar */
+            grid-template-columns: 3fr 1fr;
             gap: 30px;
             padding: 30px 20px;
         }
-        
-        /* สไตล์ของส่วนเนื้อหาหลัก */
+
         .content-main {
             background-color: #ffffff;
             padding: 30px;
@@ -82,19 +81,19 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         }
 
-        /* สไตล์ของ Sidebar (ข้อมูลติดต่อ) */
         .sidebar {
-            background-color: #f0f4f8; /* สีพื้นหลังอ่อนกว่า */
-            width: 360px;
-            height: auto;
+            background-color: #f0f4f8;
+            width: 100%;
+            height: fit-content;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-            position: sticky; /* ทำให้ sidebar ติดอยู่เมื่อ scroll */
-            top: 80px; /* ระยะห่างจากด้านบน */
-            align-self: flex-start; /* จัดให้อยู่ด้านบน */
+            position: sticky;
+            top: 80px;
+            align-self: flex-start;
+            padding: 20px;
         }
 
-        /* ------------------ Section & Headings ------------------ */
+        /* Sections */
         section {
             padding: 20px 0;
             border-bottom: 1px dashed #ddd;
@@ -107,26 +106,25 @@
 
         h2 {
             font-size: 1.7rem;
-            color: #1a73e8; /* สีน้ำเงินหลัก */
+            color: #1a73e8;
             border-left: 5px solid #1a73e8;
             padding-left: 10px;
             margin-bottom: 25px;
             font-weight: 600;
-            text-transform: uppercase;
         }
 
         h3 {
             font-size: 1.2rem;
             color: #34495e;
             margin-top: 15px;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: 600;
         }
-        
-        /* ------------------ Hero Section ------------------ */
+
+        /* Hero */
         #หน้าหลัก {
             text-align: left;
-            padding: 0 0 40px 0;
+            padding: 0 0 30px 0;
             border-bottom: none;
         }
 
@@ -135,17 +133,13 @@
             margin-bottom: 5px;
             color: #2c3e50;
         }
-        
-        #หน้าหลัก .status-info p {
-            font-size: 1.0rem;
-            color: #7f8c8d;
-            margin-bottom: 5px;
+
+        #หน้าหลัก .position {
+            font-size: 1.1rem;
+            color: #1a73e8;
+            font-weight: 600;
         }
 
-        #หน้าหลัก .status-info strong {
-            color: #333;
-        }
-        
         .โปรไฟล์-ภาพ {
             width: 150px;
             height: 150px;
@@ -156,91 +150,77 @@
             box-shadow: 0 0 10px rgba(26, 115, 232, 0.5);
         }
 
-        /* ------------------ About Section ------------------ */
-        .ส่วนเกี่ยวกับฉัน p {
-            margin-bottom: 10px;
-        }
-        
-        .ส่วนเกี่ยวกับฉัน ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .ส่วนเกี่ยวกับฉัน ul li {
-            padding-left: 1.5em;
-            text-indent: -1.5em;
-        }
-        
-        .ส่วนเกี่ยวกับฉัน ul li::before {
-            content: '✅';
-            margin-right: 0.5em;
+        /* Profile */
+        .profile-text {
+            font-size: 1rem;
         }
 
+        /* Skills */
+        .skill-group {
+            margin-bottom: 20px;
+        }
 
-        /* ------------------ Skills Section (Advanced) ------------------ */
-        .ส่วนทักษะ h3 {
+        .skill-group h3 {
             border-bottom: 1px solid #eee;
             padding-bottom: 5px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
-        
-        .ส่วนทักษะ ul {
+
+        .skill-list {
             list-style: none;
-            padding-left: 0;
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
-        
-        .ส่วนทักษะ ul li {
-            background-color: #1a73e8; /* สีน้ำเงินหลัก */
+
+        .skill-list li {
+            background-color: #1a73e8;
             color: white;
-            padding: 5px 12px;
+            padding: 6px 12px;
             border-radius: 20px;
             font-size: 0.9rem;
-            font-weight: 400;
         }
-        
-        .progress-bar-container {
-            margin-top: 20px;
+
+        /* Work Experience */
+        .experience-item {
+            margin-bottom: 25px;
         }
-        
-        .progress-item {
+
+        .experience-title {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .experience-date {
+            color: #7f8c8d;
+            font-size: 0.95rem;
             margin-bottom: 10px;
         }
-        
-        .progress-label {
-            font-weight: 600;
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        .progress-bar {
-            background-color: #e0e0e0;
-            border-radius: 5px;
-            overflow: hidden;
-            height: 10px;
-        }
-        
-        .progress {
-            background-color: #2ecc71; /* สีเขียวสำหรับ Progress */
-            height: 10px;
-            transition: width 0.5s ease-in-out;
+
+        .experience-item ul {
+            padding-left: 22px;
         }
 
+        .experience-item li {
+            margin-bottom: 8px;
+        }
 
-        /* ------------------ Projects Section ------------------ */
+        .experience-item strong {
+            color: #1a73e8;
+        }
+
+        /* Projects */
         .รายการผลงาน {
-            display: flex; /* ใช้ flex เพื่อให้แสดงผลงานติดกัน */
+            display: flex;
             flex-direction: column;
             gap: 20px;
-            margin-top: 15px;
         }
-        
+
         .รายการผลงาน article {
             background: #ffffff;
             padding: 20px;
-            border-left: 5px solid #e74c3c; /* สีแดงเป็นจุดเด่น */
+            border-left: 5px solid #1a73e8;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
@@ -249,46 +229,32 @@
             color: #2c3e50;
             font-size: 1.2rem;
         }
-        
+
         .รายการผลงาน article p {
-            margin-top: 5px;
+            margin-top: 8px;
         }
-        
+
         .รายการผลงาน article a {
             color: #1a73e8;
             text-decoration: none;
             font-weight: 600;
         }
-        
-        .สิ่งที่ส่งไปด้วย {
-            font-style: italic;
-            color: #7f8c8d;
-            padding: 10px 0;
-            border-top: 1px solid #eee;
-            margin-top: 10px;
+
+        /* Education */
+        .education-item {
+            margin-bottom: 15px;
         }
-        
-        /* ------------------ Education & Achievements ------------------ */
-        .ส่วนการศึกษา p, .ส่วนกิจกรรมและความสำเร็จ p {
-            margin-bottom: 5px;
-        }
-        
+
+        /* Achievements */
         .ส่วนกิจกรรมและความสำเร็จ ul {
             list-style: none;
             padding-left: 0;
         }
-        
-        .ส่วนกิจกรรมและความสำเร็จ ul li {
+
+        .ส่วนกิจกรรมและความสำเร็จ li {
             margin-bottom: 20px;
-            padding-left: 1.5em;
-            text-indent: -1.5em;
         }
-        
-        .ส่วนกิจกรรมและความสำเร็จ ul li::before {
-            content: '⭐'; /* ใช้ดาว */
-            margin-right: 0.5em;
-        }
-        
+
         .ส่วนกิจกรรมและความสำเร็จ img {
             max-width: 100%;
             height: auto;
@@ -298,13 +264,13 @@
             border: 1px solid #ddd;
         }
 
-        /* ------------------ Contact Section (Sidebar) ------------------ */
+        /* Contact */
         #ติดต่อ {
             text-align: left;
             padding: 0;
             border-bottom: none;
         }
-        
+
         #ติดต่อ h2 {
             border-left: none;
             padding-left: 0;
@@ -316,41 +282,19 @@
             margin-top: 10px;
             font-style: normal;
         }
-        
+
         #ติดต่อ address p {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            line-height: 1.4;
+            margin-bottom: 12px;
+            line-height: 1.5;
         }
-        
-        #ติดต่อ address p::before {
-            content: '📧'; /* Email Icon */
-            margin-right: 10px;
-            font-size: 1.2rem;
-            color: #1a73e8;
-        }
-        
-        #ติดต่อ address p:nth-child(2)::before {
-            content: '💻'; /* GitHub Icon */
-        }
-        
-        #ติดต่อ address p:nth-child(3)::before {
-            content: '🌐'; /* Social Icon */
-        }
-        
-        #ติดต่อ address p:nth-child(4)::before {
-            content: '🏠'; /* Address Icon */
-        }
-        
-        #ติดต่อ address p a {
+
+        #ติดต่อ address a {
             color: #1a73e8;
             text-decoration: none;
-            font-weight: 400;
-            word-break: break-all; /* ป้องกันลิงก์ยาวเกิน */
+            word-break: break-all;
         }
-        
-        /* ------------------ Footer ------------------ */
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 1rem 0;
@@ -359,30 +303,29 @@
             font-size: 0.85rem;
         }
 
-        /* ------------------ Responsive Design ------------------ */
+        /* Responsive */
         @media (max-width: 992px) {
             main {
-                grid-template-columns: 1fr; /* เปลี่ยนเป็น 1 คอลัมน์สำหรับ Tablet/Mobile */
+                grid-template-columns: 1fr;
                 gap: 20px;
             }
-            
+
             .sidebar {
-                position: static; /* ยกเลิก sticky */
-                top: 0;
+                position: static;
             }
         }
-        
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 padding: 1rem;
-                align-items: flex-start;
+                align-items: center;
             }
 
             nav ul {
                 flex-wrap: wrap;
-                margin-top: 10px;
                 justify-content: center;
+                margin-top: 10px;
             }
 
             nav ul li {
@@ -393,17 +336,22 @@
                 font-size: 2rem;
             }
         }
-
     </style>
 </head>
+
 <body>
 
+    <!-- Header -->
     <header>
-        <div class="โลโก้">Weeraphong Wongcharee | Portfolio</div>
+        <div class="logo">
+            Wiraphong Wongcharee | Portfolio
+        </div>
+
         <nav>
             <ul>
                 <li><a href="#หน้าหลัก" class="active">หน้าหลัก</a></li>
                 <li><a href="#เกี่ยวกับฉัน">เกี่ยวกับฉัน</a></li>
+                <li><a href="#ประสบการณ์">ประสบการณ์</a></li>
                 <li><a href="#ทักษะ">ทักษะ</a></li>
                 <li><a href="#ผลงาน">ผลงาน</a></li>
                 <li><a href="#การศึกษา">การศึกษา</a></li>
@@ -412,137 +360,340 @@
     </header>
 
     <div class="container">
+
         <main>
+
+            <!-- Main Content -->
             <div class="content-main">
-            
+
+                <!-- Hero -->
                 <section id="หน้าหลัก">
-                    <img src="18078448-b429-4b69-adea-f2f1eb7ab6c9.jpg" alt="รูปโปรไฟล์ นายวีรพงศ์ วงศ์ชารี" class="โปรไฟล์-ภาพ">
-                    <div class="คำทักทาย">
-                        <h1>**นายวีรพงศ์ วงศ์ชารี**</h1>
-                        <div class="status-info">
-                            <p>สถานะ: **นักศึกษาชั้นปีที่ 3**</p>
-                            <p>สนใจพิเศษด้าน: **AI, Web Dev, Cybersecurity, Data Science**</p>
-                        </div>
-                    </div>
+                    <img
+                        src="18078448-b429-4b69-adea-f2f1eb7ab6c9.jpg"
+                        alt="รูปโปรไฟล์ นายวีรพงศ์ วงศ์ชารี"
+                        class="โปรไฟล์-ภาพ"
+                    >
+
+                    <h1>นายวีรพงศ์ วงศ์ชารี</h1>
+
+                    <p class="position">
+                        Frontend Developer | Information Technology Student
+                    </p>
                 </section>
-                
-                <section id="เกี่ยวกับฉัน" class="ส่วนเกี่ยวกับฉัน">
+
+
+                <!-- Profile -->
+                <section id="เกี่ยวกับฉัน">
                     <h2>เกี่ยวกับฉัน</h2>
-                    <p>สวัสดีครับผมชื่อนายวีรพงศ์ วงศ์ชารี ชื่อเล่นว่าฟีล์ม ปัจจุบันกำลังศึกษาอยู่ที่มหาวิทยาลัยราชภัฏอุดรธานี <br>
-                    ผมมีความสนใจในด้านเทคโนโลยีสารสนเทศเป็นอย่างมาก พร้อมที่จะทำงานเกี่ยวกับสายงานIT<br>
-                    และมีความมุ่งมั่นที่จะพัฒนาทักษะและความรู้ใหม่ๆอยู่เสมอ </p>
-                    
-                    <h3>ทักษะด้าน Soft Skills</h3>
-                    <ul>
-                        <li>การสื่อสารและการนำเสนอ (Communication & Presentation)</li>
-                        <li>การทำงานเป็นทีมและปรับตัวได้ดี (Teamwork & Adaptability)</li>
-                        <li>การแก้ปัญหาเฉพาะหน้า (Problem Solving)</li>
-                        <li>ความกระตือรือร้นในการเรียนรู้ (Eagerness to Learn)</li>
-                    </ul>
+
+                    <p class="profile-text">
+                        นักศึกษาด้านเทคโนโลยีสารสนเทศที่มีประสบการณ์จริงในการพัฒนา
+                        Web Application ด้วย React และ JavaScript มีประสบการณ์ในการ
+                        เชื่อมต่อ REST API การแก้ไขปัญหา (Debugging) และการพัฒนา
+                        Dashboard สำหรับแสดงผลข้อมูล มีความสนใจด้าน Front-End Development
+                        และมุ่งมั่นพัฒนาทักษะด้านเทคโนโลยีอย่างต่อเนื่อง
+                    </p>
                 </section>
 
-                <section id="ทักษะ" class="ส่วนทักษะ">
-                    <h2>ทักษะทางเทคนิค (Tech Skills)</h2>
-                    
-                    <h3>Programming / Web Development</h3>
-                    <ul>
-                        <li>Python(พื้นฐาน)</li>
-                        <li>Java(พื้นฐาน)</li>
-                        <li>HTML / CSS(พื้นฐาน)</li>
-                        <li>C Language(พื้นฐาน)</li>
-                        <li>PHP(พื้นฐาน)</li>
-                        <li>SQL(พื้นฐาน)</li>
-                    </ul>
-                    
-                    <h3>Tools & Platforms</h3>
-                    <ul>
-                        <li>GitHub / Git</li>
-                        <li>VS Code</li>
-                        <li>Figma (Basic UI/UX)</li>
-                        <li>Microsoft Office</li>
-                    </ul>
 
-                    <h3>ระดับความถนัด</h3>
-                    <div class="progress-bar-container">
-                        <div class="progress-item">
-                            <span class="progress-label">Web Development (HTML/CSS/PHP)</span>
-                            <div class="progress-bar"><div class="progress" style="width: 40%;"></div></div>
+                <!-- Work Experience -->
+                <section id="ประสบการณ์">
+                    <h2>ประสบการณ์การทำงาน</h2>
+
+                    <div class="experience-item">
+
+                        <div class="experience-title">
+                            Frontend Developer Intern — Projectsoft Thailand
                         </div>
-                        <div class="progress-item">
-                            <span class="progress-label">Python / Java</span>
-                            <div class="progress-bar"><div class="progress" style="width: 40%;"></div></div>
+
+                        <div class="experience-date">
+                            6 April – 12 June
                         </div>
-                       
+
+                        <ul>
+                            <li>
+                                <strong>Developed</strong> an
+                                <strong>NHD Dashboard</strong>
+                                to visualize claim submission performance for each
+                                health-promoting hospital (รพ.สต.), comparing payment
+                                amounts before and after NHD implementation through
+                                interactive bar charts.
+                            </li>
+
+                            <li>
+                                <strong>Implemented</strong> a
+                                <strong>Top 10 ranking</strong>
+                                feature to identify health-promoting hospitals with
+                                the highest claim amounts for faster performance
+                                comparison and analysis.
+                            </li>
+
+                            <li>
+                                <strong>Developed</strong> a
+                                <strong>Drug Catalog Overview</strong>
+                                with filtering and data download features to provide
+                                an overview of medicines used by health-promoting
+                                hospitals.
+                            </li>
+
+                            <li>
+                                <strong>Integrated</strong> data from the
+                                <strong>Drug Catalog</strong> and
+                                <strong>16 drug-dispensing data files</strong>
+                                into a centralized web interface for easier data
+                                analysis and review.
+                            </li>
+
+                            <li>
+                                <strong>Built</strong> frontend interfaces and
+                                <strong>debugged</strong> application issues using
+                                React, JavaScript, REST API and MUI.
+                            </li>
+                        </ul>
+
                     </div>
                 </section>
 
-                <section id="ผลงาน" class="ส่วนผลงาน">
-                    <h2>ผลงานที่ผ่านมา (Projects / Portfolio)</h2>
-                    <p class="สิ่งที่ส่งไปด้วย">**คำแนะนำ:** ควรมีลิงก์ไปยัง GitHub Repository, Demo หรือวิดีโอสั้น ๆ พร้อมภาพ Screenshot สวย ๆ</p>
-                    
+
+                <!-- Technical Skills -->
+                <section id="ทักษะ">
+                    <h2>ทักษะทางเทคนิค</h2>
+
+                    <div class="skill-group">
+                        <h3>Frontend Development</h3>
+
+                        <ul class="skill-list">
+                            <li>HTML / CSS</li>
+                            <li>JavaScript</li>
+                            <li>React</li>
+                            <li>React Native</li>
+                            <li>MUI</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>API & Development Tools</h3>
+
+                        <ul class="skill-list">
+                            <li>REST API</li>
+                            <li>Postman</li>
+                            <li>Vite</li>
+                            <li>Git</li>
+                            <li>GitHub</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>Database & Programming</h3>
+
+                        <ul class="skill-list">
+                            <li>MySQL</li>
+                            <li>SQL</li>
+                            
+                            
+                        </ul>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>Design</h3>
+
+                        <ul class="skill-list">
+                            <li>Figma</li>
+                        </ul>
+                    </div>
+                </section>
+
+
+                <!-- Projects -->
+                <section id="ผลงาน">
+                    <h2>ผลงานที่ผ่านมา</h2>
+
                     <div class="รายการผลงาน">
-                        <article class="ผลงาน_web">
-                            <h3>ระบบจองที่จอดรถแบบออนไลน์ (Web Project)</h3>
-                            <p>เป็นระบบบริหารจัดการและจองที่จอดรถออนไลน์ พัฒนาด้วยภาษา **PHP** และฐานข้อมูล **MySQL** ช่วยลดความยุ่งยากในการค้นหาที่จอดรถ</p>
-                            <p>**เทคโนโลยีที่ใช้:** PHP, HTML, CSS, JavaScript, MySQL</p>
-                            <p>**ลิงก์ไปดูงาน:** <a href="https://github.com/wiraphong47/projactpark" target="_blank">github.com/projactpark</a></p>
+
+                        <article>
+                            <h3>NHD Dashboard</h3>
+
+                            <p>
+                               สำหรับแสดงผลข้อมูลการส่งเคลมของแต่ละ 
+รพ.สต. พร้อมเปรียบเทียบยอดเงินก่อนและหลังการใช้NHDในรูปแบบกราฟแท่ง ฟังก์ชันจัดอันดับTop 10เพื่อแสดงหน่วยบริการที่มียอดเงินเคลมสูงสุด 
+ช่วยให้สามารถเปรียบเทียบและวิเคราะห์ผลการดำเนินงานได้รวดเร็วยิ่งขึ้น
+                            </p>
+
+                            <p>
+                                <strong>Technologies:</strong>
+                                React , JavaScript , MUI , REST API ,HTML , CSS
+                            </p>
+
+                          
+                        </article>
+                         <article>
+                            <h3>Drug Catalog Overview</h3>
+
+                            <p>
+                               สำหรับตรวจสอบภาพรวมข้อมูลยา
+ในรพ.สต. พร้อมฟังก์ชันกรองข้อมูลและดาวน์โหลดข้อมูล
+-เชื่อมต่อและจัดการข้อมูลจาก Drug Catalog และข้อมูลการจ่ายยาจาก16แฟ้ม
+ให้อยู่ในหน้าเว็บเดียวเพื่อให้ง่ายต่อการตรวจสอบและวิเคราะห์ข้อมูล
+                            </p>
+
+                            <p>
+                                <strong>Technologies:</strong>
+                                React , JavaScript , MUI , REST API ,HTML , CSS
+                            </p>
+
+                          
                         </article>
 
-                    
+                    </div>
+                </section>
+
+
+                <!-- Education -->
+                <section id="การศึกษา">
+                    <h2>การศึกษา</h2>
+
+                    <div class="education-item">
+
+                        <h3>มหาวิทยาลัยราชภัฏอุดรธานี (UDRU)</h3>
+
+                        <p>
+                            <strong>ปีการศึกษา:</strong>
+                            2566 – ปัจจุบัน
+                        </p>
+
+                        <p>
+                            <strong>ระดับ:</strong>
+                            ปริญญาตรี
+                        </p>
+
+                        <p>
+                            <strong>สาขา:</strong>
+                            เทคโนโลยีสารสนเทศ (Information Technology)
+                        </p>
+
+                        <p>
+                            <strong>สถานะ:</strong>
+                            กำลังศึกษาชั้นปีที่ 4
+                        </p>
 
                     </div>
                 </section>
-                
-                <section id="การศึกษา" class="ส่วนการศึกษา">
-                    <h2>การศึกษา (Education)</h2>
-                    
-                    <h3>มหาวิทยาลัยราชภัฏอุดรธานี (UDRU)</h3>
-                    <p>**ปี 2566 – ปัจจุบัน**</p>
-                    <p>วุฒิการศึกษา: **ปริญญาตรี (กำลังศึกษาชั้นปีที่ 3)**</p>
-                    <p>สาขา: **สาขาเทคโนโลยีสารสนเทศ (Information Technology)**</p>
 
-                    <p>*จบการศึกษาระดับประถมถึงระดับมัธยมปลายที่โรงเรียนบ้านหมากแข้ง</p>
-                    <p>*ปัจจุบันกำลังศึกษาอยู่ที่มหาวิทยาลัยราชภัฏอุดรธานี</p>
-                </section>
 
+                <!-- Achievements -->
                 <section id="กิจกรรมและความสำเร็จ" class="ส่วนกิจกรรมและความสำเร็จ">
+
                     <h2>กิจกรรมและความสำเร็จ</h2>
-                    <p>แสดงความสามารถนอกด้านวิชาการและ Certifications</p>
+
                     <ul>
-                        <li>**เข้าร่วมอบรม:** "Introduction to Cybersecurity" <br> ได้รับความรู้พื้นฐานด้านการป้องกันภัยคุกคามทางไซเบอร์และการทำ Penetration Testing เบื้องต้น <br> </li>
-                        <img src="486652715_1181135126939343_2185730654573900645_n.jpg" alt="ใบรับรองการอบรม Introduction to Cybersecurity">
-                        <li>**เข้าร่วมอบรม:** "Ethical Hacker" <br> เสริมสร้างทักษะในการตรวจจับและแก้ไขช่องโหว่ของระบบ <br> </li>
-                        <img src="486993807_1181135023606020_9072195788132272788_n.jpg" alt="ใบรับรองการอบรม Ethical Hacker">
-                        <li>**ความสำเร็จ:** **แข่งขันรายการ Valorant ของมหาวิทยาลัย ได้แชมป์ของมหาวิทยาลัย** <br> </li>
-                         <li>**อบรมการใช้ai:** **อบรมการใช้aiให้น้องๆที่โรงเรียน** </li>
-                         <img src="9b48c992-3396-4b3e-b5eb-8495ae7c28ff.jpg" alt="อบรมการใช้ai">
+
+                        <li>
+                            <strong>อบรม Introduction to Cybersecurity</strong><br>
+                            ได้รับความรู้พื้นฐานด้านการป้องกันภัยคุกคามทางไซเบอร์
+                            และการทดสอบความปลอดภัยของระบบเบื้องต้น
+                        </li>
+
+                        <img
+                            src="486652715_1181135126939343_2185730654573900645_n.jpg"
+                            alt="ใบรับรองการอบรม Introduction to Cybersecurity"
+                        >
+
+                        <li>
+                            <strong>อบรม Ethical Hacker</strong><br>
+                            เรียนรู้เกี่ยวกับการตรวจจับและแก้ไขช่องโหว่ของระบบ
+                            รวมถึงแนวคิดด้านความปลอดภัยทางไซเบอร์
+                        </li>
+
+                        <img
+                            src="486993807_1181135023606020_9072195788132272788_n.jpg"
+                            alt="ใบรับรองการอบรม Ethical Hacker"
+                        >
+
+                        <li>
+                            <strong>การแข่งขัน Valorant ระดับมหาวิทยาลัย</strong><br>
+                            ได้รับรางวัลชนะเลิศการแข่งขัน Valorant ของมหาวิทยาลัย
+                        </li>
+
+                        <li>
+                            <strong>อบรมการใช้ AI</strong><br>
+                            ถ่ายทอดความรู้เกี่ยวกับการใช้ AI ให้กับนักเรียน
+                        </li>
+
+                        <img
+                            src="9b48c992-3396-4b3e-b5eb-8495ae7c28ff.jpg"
+                            alt="กิจกรรมอบรมการใช้ AI"
+                        >
+
                     </ul>
                 </section>
-                
-                <section id="เป้าหมาย" class="ส่วนเสริม">
-                    <h2>เป้าหมาย</h2>
-                    <p>เป้าหมายอยากทำงานสายงานเกี่ยวกับ **IT/Tech** </p>
-                </section>
-                
+
             </div>
-            
+
+
+            <!-- Sidebar -->
             <div class="sidebar">
-                <section id="ติดต่อ" class="ส่วนติดต่อ">
+
+                <section id="ติดต่อ">
+
                     <h2>ข้อมูลติดต่อ</h2>
+
                     <address>
-                        <p>**Email:** <a href="mailto:66040233126@udru.ac.th">66040233126@udru.ac.th</a></p>
-                        <p>**GitHub:** <a href="https://github.com/wiraphong47" target="_blank">github.com/wiraphong47</a></p>
-                        <p>**Facebook:** <a href="https://www.facebook.com/wiraphong.wongchare" target="_blank">facebook.com/wiraphong</a></p>
-                        <p>**ที่อยู่:** 114 หมู่14 ต.หนองนาคำ อ.เมือง จ.อุดรธานี 41000</p>
-                        <p style="margin-top: 20px;">**โทรศัพท์:** [0829695360]</p>
+
+                        <p>
+                            <strong>Email:</strong><br>
+                            <a href="mailto:66040233126@udru.ac.th">
+                                66040233126@udru.ac.th
+                            </a>
+                        </p>
+
+                        <p>
+                            <strong>GitHub:</strong><br>
+                            <a
+                                href="https://github.com/wiraphong47"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                github.com/wiraphong47
+                            </a>
+                        </p>
+
+                        <p>
+                            <strong>Facebook:</strong><br>
+                            <a
+                                href="https://www.facebook.com/wiraphong.wongchare"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                facebook.com/wiraphong
+                            </a>
+                        </p>
+
+                        <p>
+                            <strong>โทรศัพท์:</strong><br>
+                            082-969-5360
+                        </p>
+
+                        <p>
+                            <strong>ที่อยู่:</strong><br>
+                            Udon Thani, Thailand
+                        </p>
+
                     </address>
+
                 </section>
+
             </div>
+
         </main>
+
     </div>
 
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 นายวีรพงศ์ วงศ์ชารี. ข้อมูลสำหรับสมัครงาน</p>
+        <p>
+            &copy; 2026 นายวีรพงศ์ วงศ์ชารี. Portfolio
+        </p>
     </footer>
 
 </body>
